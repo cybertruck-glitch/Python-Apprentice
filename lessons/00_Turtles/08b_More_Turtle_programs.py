@@ -7,8 +7,14 @@ from the section "Change the Turtle Image"
 Then change the code so that the turtle has a different image ( look in the 'images'
 directory ) and moves to the corners of the screen in a square pattern. 
 """
+import turtle                           # Tell Python we want to work with the turtle
+turtle.setup (width=600, height=600)    # Set the size of the window
 
-set_turtle_image(turtle, image_name):
+tina = turtle.Turtle()                  # Create a turtle named tina
+
+tina.shape('turtle')                    # Set the shape of the turtle to a turtle
+tina.speed(2)
+def set_turtle_image(turtle, image_name):
     """Set the turtle's shape to a custom image."""
 
     from pathlib import Path
@@ -18,3 +24,22 @@ set_turtle_image(turtle, image_name):
     screen = turtle.getscreen()
     screen.addshape(image_path)
     turtle.shape(image_path)
+
+# Set up the screen
+screen = turtle.Screen()
+screen.setup(width=600, height=600)
+
+# Create a turtle and set its shape to the custom GIF
+t = turtle.Turtle()
+
+set_turtle_image(t, "pikachu.gif")
+
+t.penup()
+t.speed(3)
+
+for i in range(4):
+    t.goto(200, 200)
+    t.goto(-200, -200)
+
+
+turtle.exitonclick()
